@@ -5,6 +5,18 @@
   "files": [
     "dist"
   ],
+  "author": "hfohui",
+  "repository": "https://github.com/fohui/violet",
+  "keywords":[
+    "react",
+    "typescript",
+    "selector",
+    "country-phone-code",
+    "country-selector",
+    "father",
+    "dumi",
+    "rollup"
+  ],
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
