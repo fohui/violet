@@ -18,7 +18,7 @@ export default () => {
     {
       visible  
         ? <CountrySelector
-          language={'hk'}
+          language={'cn-hk'}
           onClose={()=> setVisible(false)} 
           dispatch={(values)=> console.log(values)}
         />
