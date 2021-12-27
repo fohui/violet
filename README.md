@@ -32,6 +32,6 @@ export default () => {
 
 |  属性     | 说明    | 类型                          | 默认值    |
 |----------|---------|------------------------------|--------- |
-| language | 国家语言 | cn、cn-hk、en                 | 默认cn简体|
+| language | 国家语言 | cn、cn-hk、en                 | 可选，默认cn简体|
 | onClose  | 关闭弹窗 | ()=> void                    | 必须      |
 | dispatch | 选择国家 |({areaCode, country})=> void  | 必须      |
