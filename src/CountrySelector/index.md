@@ -11,12 +11,18 @@ import React,{useState} from 'react';
 import { CountrySelector } from '@breezez/react-country-code-selector';
 
 export default () => {
-  const [language, setLanguage] = useState<'en'|'hk'>('hk')
+  const [language, setLanguage] = useState<'en'|'cn-hk'|'cn'>('cn-hk')
   const [visible, setVisible] = useState(false)
   return (
     <>
     <div className="demo">
       <p style={{fontSize: '14px'}}>Country Selector demo: </p>
+       <button className="button" onClick={()=>{
+        setLanguage('cn')
+        setVisible(true)
+      }}>
+        cn
+      </button>
       <button className="button" onClick={()=>{
         setLanguage('en')
         setVisible(true)
@@ -24,10 +30,10 @@ export default () => {
         en
       </button>
       <button className="button" onClick={()=>{
-        setLanguage('hk')
+        setLanguage('cn-hk')
         setVisible(true)
       }}>
-        hk
+        cn-hk
       </button>
     </div>
     {
@@ -47,7 +53,7 @@ export default () => {
 
 |  属性     | 说明    | 类型                          | 默认值    |
 |----------|---------|------------------------------|--------- |
-| language | 国家语言 | hk、en、undefined             | undefined|
+| language | 国家语言 | cn、cn-hk、en                 | cn       |
 | onClose  | 关闭弹窗 | ()=> void                    | 必须      |
 | dispatch | 选择国家 |({areaCode, country})=> void  | 必须      |
 

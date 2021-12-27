@@ -8,11 +8,14 @@ import CountryList from './countryList';
 import styles from './index.scss';
 
 function changeCountryName(language = ''){
-  return countries.map((item) => {
+  const countriesCopy = countries.concat();
+  return countriesCopy.map((item) => {
     if(language === 'en'){
       item.name = item.en;
-    }else if(language === 'hk'){
+    }else if(language === 'cn-hk'){
       item.name = item.hk;
+    }else if(language === 'cn'){
+      item.name = item.name
     }
 
     return item;
@@ -22,10 +25,10 @@ function changeCountryName(language = ''){
 interface ISelectorProps {
   onClose:Dispatch<boolean>;
   dispatch:Dispatch<ICountryState>;
-  language?:'en' | 'hk';
+  language?:'en' | 'cn-hk' | 'cn'
 }
 export default function CountrySelector(props:ISelectorProps) {
-  const { onClose, language, dispatch } = props;
+  const { onClose, language='cn', dispatch } = props;
   const [letter, setLetter] = useState<string>('A');
   const [tipsState, setTipsState] = useState<boolean>(false);
   const [countryList, setCountryList] = useState<ICountry[]>([]);
@@ -49,6 +52,7 @@ export default function CountrySelector(props:ISelectorProps) {
     const list = changeCountryName(language);
     setCountryList(list);
   }, []);
+
   return (
     <div
       className={styles.container}
